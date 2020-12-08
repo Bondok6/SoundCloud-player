@@ -26,16 +26,16 @@ soundCloudApi.getTrack = function (inputValue) {
 
 soundCloudApi.getTrack('rilo kiley');
 
-soundCloudApi.renderTrach = function () {
+soundCloudApi.renderTrack = function () {
   
   let card = document.createElement('div');
   card.classList.add('card');
 
   let searchResault = document.querySelector('.js-search-results');
-  searchResault.appendChild('card');
+  searchResault.appendChild(card);
 
 }
-
+soundCloudApi.renderTrack();
 
 // display the cards 
 
