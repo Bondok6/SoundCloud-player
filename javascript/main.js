@@ -3,23 +3,22 @@
 
 
 // soundCloud Api
-var soundCloudApi = {};
-soundCloudApi.init = function () {
+var soundCloudApi = {};                //object 
+soundCloudApi.init = function () {        //annonymous function 
   
   SC.initialize({
     client_id: 'cd9be64eeb32d1741c17cb39e41d254d'
   });
 
 }
+soundCloudApi.init();                 // call annoymous func
 
-soundCloudApi.init();
-
-soundCloudApi.getTrack = function (inputValue) {
+soundCloudApi.getTrack = function (inputValue) {  //get data from api
   
   SC.get('/tracks', {
     q: inputValue
   }).then(function(tracks) {
-    console.log(tracks);
+    //console.log(tracks);
     soundCloudApi.renderTrack(tracks);
   });
 
@@ -27,7 +26,7 @@ soundCloudApi.getTrack = function (inputValue) {
 soundCloudApi.getTrack('Amr diab');
 
 // display the cards 
-soundCloudApi.renderTrack = function (tracks) {
+soundCloudApi.renderTrack = function (tracks) {  // show data in cards
   
   tracks.forEach(track => {
 
@@ -97,6 +96,12 @@ soundCloudApi.getEmbed = function(trackUrl) {
     box.innerHTML = embed.html;
 
     sideBar.insertBefore(box, sideBar.firstChild);
+
+    localStorage.setItem('key', sideBar.innerHTML);    // save(set) playlist in local storage
   });
 
 }
+
+
+let sideBar = document.querySelector('.js-playlist'); 
+sideBar.innerHTML = localStorage.getItem('key');       // show(get) the playlist  
