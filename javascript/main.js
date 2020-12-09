@@ -24,7 +24,7 @@ soundCloudApi.getTrack = function (inputValue) {
   });
 
 }
-soundCloudApi.getTrack('rilo kiley');
+soundCloudApi.getTrack('Amr diab');
 
 // display the cards 
 soundCloudApi.renderTrack = function (tracks) {
@@ -54,8 +54,8 @@ soundCloudApi.renderTrack = function (tracks) {
     divHeader.classList.add('header');
 
     let anchor = document.createElement('a');
-    anchor.setAttribute('href', track.permalink_url);
-    anchor.setAttribute('target', '_blank');
+    // anchor.setAttribute('href', track.permalink_url);
+    // anchor.setAttribute('target', '_blank');
     anchor.innerHTML = track.title;
 
     divHeader.appendChild(anchor);
@@ -74,6 +74,10 @@ soundCloudApi.renderTrack = function (tracks) {
     divButton.appendChild(span);
     card.appendChild(divButton);
 
+    divButton.addEventListener('click',()=>{
+      soundCloudApi.getEmbed(track.permalink_url)
+    })
+
   });
   
 }
@@ -81,10 +85,18 @@ soundCloudApi.renderTrack = function (tracks) {
 
 
 // add to playlist and play .
-SC.oEmbed('https://soundcloud.com/forss/flickermood', {
-  auto_play: true
-}).then(function(embed){
-  console.log('oEmbed response: ', embed);
-  let sideBar = document.querySelector('.js-playlist');
-  sideBar.innerHTML = embed.html;
-});
+soundCloudApi.getEmbed = function(trackUrl) {
+
+    SC.oEmbed(trackUrl, {
+    auto_play: true
+  }).then(function(embed){
+    console.log('oEmbed response: ', embed);
+    let sideBar = document.querySelector('.js-playlist');
+    
+    let box = document.createElement('div');
+    box.innerHTML = embed.html;
+
+    sideBar.insertBefore(box, sideBar.firstChild);
+  });
+
+}
