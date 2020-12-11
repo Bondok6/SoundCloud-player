@@ -1,4 +1,8 @@
 // search
+document.querySelector('.js-submit').addEventListener('click', () => {
+  let input = document.querySelector('.js-search');
+  let inputValue = input.value;
+})
 
 
 
