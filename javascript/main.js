@@ -1,10 +1,29 @@
 // search
-document.querySelector('.js-submit').addEventListener('click', () => {
-  let input = document.querySelector('.js-search');
-  let inputValue = input.value;
-})
+let UI = {};
+UI.pressEnter = function (e) {
 
+  document.querySelector('.js-search').addEventListener('keyup', (e) => {
 
+    let input = document.querySelector('.js-search');
+    let inputValue = input.value;
+    
+    if (e.which === 13) {
+      soundCloudApi.getTrack(inputValue);
+    }
+  })
+}
+
+UI.click = function () {
+
+  document.querySelector('.js-submit').addEventListener('click', () => {
+    let input = document.querySelector('.js-search');
+    let inputValue = input.value;
+    soundCloudApi.getTrack(inputValue);
+  })
+}
+
+UI.pressEnter();
+UI.click();
 
 // soundCloud Api
 var soundCloudApi = {};                //object 
@@ -23,11 +42,14 @@ soundCloudApi.getTrack = function (inputValue) {  //get data from api
     q: inputValue
   }).then(function(tracks) {
     //console.log(tracks);
+
+    var searchResult = document.querySelector('.js-search-results');
+    searchResult.innerHTML = "";
+
     soundCloudApi.renderTrack(tracks);
   });
 
 }
-soundCloudApi.getTrack('mohammed ramadan');
 
 // display the cards 
 soundCloudApi.renderTrack = function (tracks) {  // show data in cards
@@ -85,8 +107,6 @@ soundCloudApi.renderTrack = function (tracks) {  // show data in cards
   
 }
 
-
-
 // add to playlist and play .
 soundCloudApi.getEmbed = function(trackUrl) {
 
@@ -106,8 +126,7 @@ soundCloudApi.getEmbed = function(trackUrl) {
 
 }
 
-
 let sideBar = document.querySelector('.js-playlist'); 
 sideBar.innerHTML = localStorage.getItem('key');       // show(get) the playlist  
 
-localStorage.clear();
+//localStorage.clear();
