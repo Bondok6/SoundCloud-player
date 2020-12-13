@@ -129,4 +129,5 @@ soundCloudApi.getEmbed = function(trackUrl) {
 let sideBar = document.querySelector('.js-playlist'); 
 sideBar.innerHTML = localStorage.getItem('key');       // show(get) the playlist  
 
+
 //localStorage.clear();
