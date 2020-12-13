@@ -64,3 +64,21 @@ html, body {
 	justify-content: center;
     margin-top: 30px;
 }
+
+button{
+	width: 100px;
+	height: 30px;
+	border-radius: 20px;
+	color: white;
+	background-color: green;
+	position: relative;
+	left: 40%;
+	top: 10px;
+	font-size: medium;
+}
+
+button:hover{
+	background-color: white;
+	color: green;
+	font-size: large;
+}
