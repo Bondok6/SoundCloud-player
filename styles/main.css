@@ -82,3 +82,23 @@ button:hover{
 	color: green;
 	font-size: large;
 }
+
+/* mobile screen */
+@media only screen and (max-width: 600px) {
+
+	#soundcloud-player .col-left {
+		width: 30%;
+		min-width: 0px;
+	}
+
+	#soundcloud-player .input {
+		width: 80%;
+		float: right;
+		font-size: 14px;
+	}
+
+	button{
+		width: 60px;
+		height: 25px;
+		font-size: 14px;
+}
