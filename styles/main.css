@@ -105,3 +105,16 @@ button:hover{
 		height: 25px;
 		font-size: 14px;
 }
+@media only screen and (max-width:490px){
+	#soundcloud-player .main {
+		box-sizing: border-box;
+		padding: 30px;
+		margin: 30px 0px;
+		margin-left: 20px;
+	}
+	
+	#soundcloud-player .input {
+		width: 100%;
+		font-size: 14px;
+	}
+}
