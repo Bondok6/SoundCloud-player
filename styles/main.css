@@ -66,20 +66,23 @@ html, body {
 }
 
 button{
+	margin-bottom: 20px;
 	width: 100px;
 	height: 30px;
 	border-radius: 20px;
-	color: white;
-	background-color: green;
+	color: #333;
+	background-color: #fff;
+	font-size: medium;
+	transition: .5s;
+	border: 1px solid #333;
 	position: relative;
 	left: 40%;
-	top: 10px;
-	font-size: medium;
+	top: 40px;
 }
 
 button:hover{
-	background-color: white;
-	color: green;
+	background-color: #333;
+	color: #fff;
 	font-size: large;
 }
 
