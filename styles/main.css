@@ -105,7 +105,8 @@ button:hover{
 		height: 25px;
 		font-size: 14px;
 }
-@media only screen and (max-width:490px){
+
+@media(max-width:490px){
 	#soundcloud-player .main {
 		box-sizing: border-box;
 		padding: 30px;
