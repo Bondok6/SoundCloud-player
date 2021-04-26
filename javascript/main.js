@@ -15,9 +15,10 @@ UI.pressEnter = function (e) {
 
 UI.click = function () {
 
-  document.querySelector('.js-submit').addEventListener('click', () => {
+  document.querySelector('.js-submit').addEventListener('click', (e) => {
     let input = document.querySelector('.js-search');
     let inputValue = input.value;
+    
     soundCloudApi.getTrack(inputValue);
   })
 }
@@ -44,7 +45,7 @@ soundCloudApi.getTrack = function (inputValue) {  //get data from api
     //console.log(tracks);
 
     var searchResult = document.querySelector('.js-search-results');
-    searchResult.innerHTML = "";
+    searchResult.innerHTML = "";               // empty search result
 
     soundCloudApi.renderTrack(tracks);
   });
