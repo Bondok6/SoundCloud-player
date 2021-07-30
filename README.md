@@ -1,4 +1,4 @@
-# SoundCloud-player
+# SoundCloud Player
 
 > In this project you can search for any song you want by artist name or song name and listen to it.
 
