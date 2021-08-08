@@ -5,6 +5,17 @@
 
 ![image preview](preview.PNG)
 
+## Built with
+
+- HTML
+- CSS
+- JavaScript
+
+## Additional Used
+
+- Bootstrap4
+- SoundCloud API
+
 
 ## Live Demo
 
